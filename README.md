@@ -112,6 +112,159 @@ Puedes modificar los siguientes aspectos en el script:
 - **Destinatarios:** Añade múltiples correos de destino
 - **Formato:** Personaliza el contenido del Excel
 
+
+
+# 📚 Librerías Necesarias
+
+Este proyecto requiere las siguientes librerías de Python para funcionar correctamente:
+
+## 📦 Lista de dependencias
+
+```
+requests
+pandas
+openpyxl
+schedule
+pytz
+python-dotenv
+```
+
+## 📋 Descripción de cada librería
+
+### 🌐 requests
+- **Propósito**: Realizar peticiones HTTP a la API de Cisco Umbrella
+- **Uso**: Descargar datos DNS y comunicarse con servicios web
+- **Documentación**: [requests.readthedocs.io](https://requests.readthedocs.io)
+
+### 📊 pandas
+- **Propósito**: Manipulación y análisis de datos
+- **Uso**: Procesar los datos DNS descargados y estructurarlos
+- **Documentación**: [pandas.pydata.org](https://pandas.pydata.org)
+
+### 📈 openpyxl
+- **Propósito**: Crear y manipular archivos Excel (.xlsx)
+- **Uso**: Generar los reportes en formato Excel
+- **Documentación**: [openpyxl.readthedocs.io](https://openpyxl.readthedocs.io)
+
+### ⏰ schedule
+- **Propósito**: Programar tareas automáticas
+- **Uso**: Ejecutar el script cada lunes a las 08:00
+- **Documentación**: [schedule.readthedocs.io](https://schedule.readthedocs.io)
+
+### 🌍 pytz
+- **Propósito**: Manejo de zonas horarias
+- **Uso**: Configurar la hora de Ciudad de México para la programación
+- **Documentación**: [pytz.sourceforge.net](https://pytz.sourceforge.net)
+
+### 🔐 python-dotenv
+- **Propósito**: Cargar variables de entorno desde archivo .env
+- **Uso**: Mantener credenciales y configuraciones sensibles seguras
+- **Documentación**: [github.com/theskumar/python-dotenv](https://github.com/theskumar/python-dotenv)
+
+## 🔧 Instalación
+
+### Instalación individual
+```bash
+pip install requests pandas openpyxl schedule pytz python-dotenv
+```
+
+### Instalación desde requirements.txt
+```bash
+pip install -r requirements.txt
+```
+
+### Instalación con versiones específicas (recomendado)
+```bash
+pip install requests==2.31.0 pandas==2.0.3 openpyxl==3.1.2 schedule==1.2.0 pytz==2023.3 python-dotenv==1.0.0
+```
+
+## 📋 Archivo requirements.txt
+
+Crea un archivo llamado `requirements.txt` con el siguiente contenido:
+
+```txt
+requests==2.31.0
+pandas==2.0.3
+openpyxl==3.1.2
+schedule==1.2.0
+pytz==2023.3
+python-dotenv==1.0.0
+```
+
+## 🐍 Compatibilidad de Python
+
+- **Python mínimo**: 3.7+
+- **Python recomendado**: 3.9+
+- **Probado en**: 3.9, 3.10, 3.11
+
+## 💻 Instalación por Sistema Operativo
+
+### Windows
+```cmd
+pip install -r requirements.txt
+```
+
+### macOS/Linux
+```bash
+pip3 install -r requirements.txt
+```
+
+### Entorno virtual (recomendado)
+```bash
+# Crear entorno virtual
+python -m venv venv
+
+# Activar entorno virtual
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+
+# Instalar dependencias
+pip install -r requirements.txt
+```
+
+## 🔍 Verificación de instalación
+
+Para verificar que todas las librerías se instalaron correctamente:
+
+```python
+import requests
+import pandas as pd
+import openpyxl
+import schedule
+import pytz
+from dotenv import load_dotenv
+
+print("✅ Todas las librerías se importaron correctamente")
+```
+
+## 🚨 Troubleshooting
+
+### Error común: "No module named 'xyz'"
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### Error de permisos en Windows
+```cmd
+pip install --user -r requirements.txt
+```
+
+### Error de compilación en macOS/Linux
+```bash
+# Instalar dependencias del sistema
+sudo apt-get install python3-dev  # Ubuntu/Debian
+brew install python3  # macOS con Homebrew
+```
+
+## 📝 Notas adicionales
+
+- Estas librerías son suficientes para la funcionalidad básica del proyecto
+- Para el ejecutable con pyinstaller, no se requieren librerías adicionales
+- Todas las librerías son compatibles entre sí en las versiones especificadas
+
 ## 📝 Licencia
 
 Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE](LICENSE) para más detalles.
